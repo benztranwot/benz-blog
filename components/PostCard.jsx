@@ -2,9 +2,9 @@ import moment from "moment/moment";
 import Link from "next/link";
 import Image from "next/image";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, last }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className={`bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 ${last ? "" : "mb-8"}`}>
       <div className="relative overflow-hidden shadow-md mb-6 w-full h-56 sm:h-80">
         <Image
           src={post.featuredImage.url}

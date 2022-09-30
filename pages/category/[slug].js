@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { getCategories, getCategoryPost } from "../../services";
-import { PostCard, Categories, Loader } from "../../components";
+import { PostCard, Categories, Loader, PostWidget } from "../../components";
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
@@ -16,14 +16,15 @@ const CategoryPost = ({ posts }) => {
         <title>Category | Benz Blog</title>
         <meta name="description" content="Benz Blog" />
       </Head>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
+            <PostCard key={index} post={post.node} last={posts.length - 1 === index ? true : false} />
           ))}
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
+            <PostWidget />
             <Categories />
           </div>
         </div>
@@ -33,17 +34,15 @@ const CategoryPost = ({ posts }) => {
 };
 export default CategoryPost;
 
-// Fetch data at build time
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
 
   return {
     props: { posts },
+    revalidate: 86400,
   };
 }
 
-// Specify dynamic routes to pre-render pages based on data.
-// The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths() {
   const categories = await getCategories();
   return {

@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full border-blue-400 py-4 sm:py-8 flex flex-col md:flex-row justify-between items-center">
+      <nav className="border-b w-full border-blue-400 py-4 sm:py-8 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-0 sm:mb-4 md:mb-0">
           <Link href="/">
             <span className="p-4 sm:p-8 cursor-pointer font-bold text-4xl text-pink-600 hover:text-pink-600 transition duration-200 sm:text-white">
@@ -30,7 +30,7 @@ const Header = () => {
             </Link>
           ))}
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

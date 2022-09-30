@@ -4,6 +4,13 @@
 
 My personal blog built with Next.js, TailwindCSS and Hygraph CMS.
 
+## Features
+
+- Scalability with ISR (Incremental Static Regeneration), posts are updated everyday. The `revalidate: 86400` prop is added inside `getStaticProps`.
+- All images are optimized using built in `next/image`.
+- Using Hygraph CMS allows content editors to publish changes without involving code.
+- Other features like post categories, featured posts suggestion, related post suggestion.
+
 ## Preview
 
 <img src="./resources/home.png" />

@@ -27,7 +27,7 @@ const PostWidget = ({ categories, slug }) => {
         <Link href={`/post/${post.slug}`} key={post.title}>
           <div
             key={index}
-            className={`flex items-center w-full p-3 rounded-lg transition duration-200 cursor-pointer hover:bg-slate-100 ${
+            className={`flex items-center w-full p-2 rounded-lg transition duration-200 cursor-pointer hover:bg-slate-100 ${
               index === relatedPosts.length - 1 ? "border-b-0" : "border-b"
             }`}
           >

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="container mx-auto px-10 mb-4">
+    <footer className="container mx-auto px-10">
       <div className="border-t w-full border-blue-400 py-8 text-center">
         <p className="text-white inline-block">
           Make with ❤️ by{" "}

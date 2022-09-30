@@ -13,8 +13,8 @@ export default function Home({ posts }) {
       <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post) => (
-            <PostCard post={post.node} key={post.node.title} />
+          {posts.map((post, index) => (
+            <PostCard post={post.node} key={post.node.title} last={posts.length - 1 === index ? true : false} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
@@ -33,5 +33,6 @@ export async function getStaticProps() {
 
   return {
     props: { posts },
+    revalidate: 86400,
   };
 }
