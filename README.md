@@ -1,8 +1,8 @@
 # Benz Blog
 
-My personal blog built with Next.js, TailwindCSS and Hygraph CMS.
-
 [View Live Site](https://benz-blog.vercel.app/)
+
+My personal blog built with Next.js, TailwindCSS and Hygraph CMS.
 
 ## Preview
 
