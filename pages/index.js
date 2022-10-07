@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { PostCard, Categories, PostWidget } from "../components";
-import FeaturedPosts from "../sections/FeaturedPosts";
+import FeaturedPosts from "../components/FeaturedPosts";
 import { getPosts } from "../services";
 
 export default function Home({ posts }) {

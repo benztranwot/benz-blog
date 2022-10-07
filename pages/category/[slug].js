@@ -1,15 +1,8 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
-import { getCategories, getCategoryPost } from "../../services";
+import { getCategoryPost } from "../../services";
 import { PostCard, Categories, Loader, PostWidget } from "../../components";
 
 const CategoryPost = ({ posts }) => {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <Loader />;
-  }
-
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -34,19 +27,10 @@ const CategoryPost = ({ posts }) => {
 };
 export default CategoryPost;
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const posts = await getCategoryPost(params.slug);
 
   return {
     props: { posts },
-    revalidate: 86400,
-  };
-}
-
-export async function getStaticPaths() {
-  const categories = await getCategories();
-  return {
-    paths: categories.map(({ slug }) => ({ params: { slug } })),
-    fallback: true,
   };
 }

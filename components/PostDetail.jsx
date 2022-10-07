@@ -46,20 +46,29 @@ const PostDetail = ({ post }) => {
           </h4>
         );
       case "image":
-        return <img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} />;
+        return (
+          <img
+            key={index}
+            alt={obj.title}
+            height={obj.height}
+            width={obj.width}
+            src={obj.src}
+            className="rounded-md mb-8"
+          />
+        );
       default:
         return modifiedText;
     }
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-4 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
         <div className="relative w-full h-56 sm:h-72 md:h-96 2xl:h-128">
           <Image
             src={post.featuredImage.url}
             alt={post.title}
-            className="object-top object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+            className="object-center object-cover shadow-lg rounded-t-lg lg:rounded-lg"
             layout="fill"
           />
         </div>
