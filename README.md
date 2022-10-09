@@ -6,7 +6,7 @@ My personal blog built with Next.js, TailwindCSS and Hygraph CMS.
 
 ## Features
 
-- Scalability with ISR (Incremental Static Regeneration) on Landing Page. SSR (Server-Side Rendering) on other routes.
+- Scalability with SSR (Server-Side Rendering) on every routes.
 - Images are optimized using built in `next/image`. Images embedded in blog content are stored in webp format.
 - Using Hygraph CMS allows content editors to publish changes without involving code.
 - Other features like post categories, featured posts suggestion, related post suggestion.
